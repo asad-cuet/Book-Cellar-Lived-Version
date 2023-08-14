@@ -180,12 +180,12 @@ include 'config.php';
 $sr=0;
 if(isset($_REQUEST['search_'])) { //If search by category
  if(!empty($_REQUEST['c_name'])) { $cat_id=$_REQUEST['c_name'];
-  if($cat_id=='all') { $read_query="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id ORDER BY Book_id DESC";  } else {
-  $read_query="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id  WHERE Category='$cat_id' ORDER BY Book_id DESC"; } //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+  if($cat_id=='all') { $read_query="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id ORDER BY Book_id DESC";  } else {
+  $read_query="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id  WHERE category='$cat_id' ORDER BY Book_id DESC"; } //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
   $result=mysqli_query($connection,$read_query);  
   } 
 } else { 
- $read_query="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id ORDER BY Book_id DESC";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+ $read_query="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id ORDER BY Book_id DESC";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
  $result=mysqli_query($connection,$read_query); }
  $s_r=1;
 

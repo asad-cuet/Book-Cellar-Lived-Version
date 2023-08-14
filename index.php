@@ -168,7 +168,7 @@ if(isset($_REQUEST['msg'])) {
 
 }
 ?>
-<div class="my-dark-gray"><?php include'notice.php'; ?></div>
+<div class="my-dark-gray"><?php include 'notice.php'; ?></div>
 
 
 
@@ -193,7 +193,7 @@ while($row=mysqli_fetch_row($result)) {
 <?php
   for($i=0;$i<$len;$i++) 
   {
-    $read_query2="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id WHERE Book_id='$arr_id[$i]'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+    $read_query2="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id WHERE Book_id='$arr_id[$i]'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
     $result2=mysqli_query($connection,$read_query2);
     while($row2=mysqli_fetch_row($result2)) {
   

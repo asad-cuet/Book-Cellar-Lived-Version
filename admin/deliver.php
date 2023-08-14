@@ -117,7 +117,7 @@ $author_name=array();
         {
             
 
-              $read_query2="SELECT * FROM Book_info WHERE Book_id=$arr_ids[$x]";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+              $read_query2="SELECT * FROM book_info WHERE Book_id=$arr_ids[$x]";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
 
               $result2=mysqli_query($connection,$read_query2); 
 

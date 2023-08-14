@@ -10,7 +10,7 @@ $rec_book_id=filter($_REQUEST['book_id']);
 
 
 
-$read_query2="SELECT * FROM Book_info LEFT JOIN category ON category.Category_id=Book_info.Category WHERE Book_id='$rec_book_id'";
+$read_query2="SELECT * FROM book_info LEFT JOIN category ON category.Category_id=book_info.Category WHERE Book_id='$rec_book_id'";
 $result2=mysqli_query($connection,$read_query2);
 
 while($row=mysqli_fetch_row($result2)) {
@@ -210,7 +210,7 @@ a { text-decoration:none; }
         <?php
 
 
-$read_query2="SELECT * FROM Book_info LEFT JOIN category ON category.Category_id=Book_info.Category WHERE Book_id='$rec_book_id'";
+$read_query2="SELECT * FROM book_info LEFT JOIN category ON category.Category_id=book_info.Category WHERE Book_id='$rec_book_id'";
 $result2=mysqli_query($connection,$read_query2);
 $sr=0;
 while($row=mysqli_fetch_row($result2)) {
@@ -329,7 +329,7 @@ while($row=mysqli_fetch_row($result2)) {
 <?php
     $bn=0;
     include 'slide.php';
-    $read_query2="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id WHERE Book_info.Category='$cat_id'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+    $read_query2="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id WHERE book_info.Category='$cat_id'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
     $result2=mysqli_query($connection,$read_query2);
     while($row2=mysqli_fetch_row($result2)) {
   

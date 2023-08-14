@@ -140,7 +140,7 @@ if(isset($_SESSION['cart'])) {
  //checking delivery fee
  $id=htmlspecialchars($value['b_id']);
 include 'config.php';
- $read_query="SELECT * FROM Book_info WHERE Book_id='$id'";  
+ $read_query="SELECT * FROM book_info WHERE Book_id='$id'";  
 $result=mysqli_query($connection,$read_query) or die("Failed");
 while($row=mysqli_fetch_row($result)) {
            $del_charge=htmlspecialchars($row[12]);

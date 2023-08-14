@@ -114,7 +114,7 @@ $author_name=array();
              if($i==$x) 
              { 
              include 'config.php';
-              $read_query3="SELECT * FROM Book_info WHERE Book_id=$arr_ids[$i]";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+              $read_query3="SELECT * FROM book_info WHERE Book_id=$arr_ids[$i]";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
  
               $result3=mysqli_query($connection,$read_query3); 
 

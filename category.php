@@ -144,7 +144,7 @@ $sr=0;
 
 
 
-$read_query2="SELECT * FROM Book_info LEFT JOIN category ON category.Category_id=Book_info.Category WHERE Book_info.Category='$cat_id' ORDER BY Book_id DESC";
+$read_query2="SELECT * FROM book_info LEFT JOIN category ON category.Category_id=book_info.Category WHERE book_info.Category='$cat_id' ORDER BY Book_id DESC";
 $result2=mysqli_query($connection,$read_query2);
 
 while($row=mysqli_fetch_row($result2)) {

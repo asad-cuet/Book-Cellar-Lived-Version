@@ -3,7 +3,7 @@ include 'config.php';
 if(isset($_POST['query']))
 {
       $output='';
-      $query="SELECT * FROM Book_info WHERE Book_title LIKE '%".$_POST['query']."%'";
+      $query="SELECT * FROM book_info WHERE Book_title LIKE '%".$_POST['query']."%'";
       $result=mysqli_query($connection,$query);
       $output='<ul class="w3-ul">';
       if(mysqli_num_rows($result)>0) 

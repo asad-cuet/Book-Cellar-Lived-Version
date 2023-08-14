@@ -31,7 +31,7 @@ if(!isset($_SESSION['username'])) {   // If not Logged In
              if(isset($_REQUEST['trending'])) {
                     include 'config.php';
                    $book_id=filter(mysqli_real_escape_string($connection,$_REQUEST['id']));
-                   $check_query="SELECT Book_id FROM Book_info WHERE Book_id='$book_id'";
+                   $check_query="SELECT Book_id FROM book_info WHERE Book_id='$book_id'";
                    $check=mysqli_query($connection,$check_query) or die(" Check query failed");
                    $count=mysqli_num_rows($check);
                    if ($count>0)  {                            
@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])) {   // If not Logged In
              if(isset($_REQUEST['post'])) {
                     include 'config.php';
                    $book_id=filter(mysqli_real_escape_string($connection,$_REQUEST['id']));
-                   $check_query="SELECT Book_id FROM Book_info WHERE Book_id='$book_id'";
+                   $check_query="SELECT Book_id FROM book_info WHERE Book_id='$book_id'";
                    $check=mysqli_query($connection,$check_query) or die(" Check query failed");
                    $count=mysqli_num_rows($check);
                    if ($count>0)  {                            
@@ -236,7 +236,7 @@ $s_r++;
 
 <?php
 include 'config.php';
-$read_query2="SELECT * FROM trending LEFT JOIN Book_info ON trending.Book_id=Book_info.Book_id LEFT JOIN category ON Book_info.Category=category.Category_id
+$read_query2="SELECT * FROM trending LEFT JOIN book_info ON trending.Book_id=book_info.Book_id LEFT JOIN category ON book_info.Category=category.Category_id
              ORDER BY trending.Trend_id DESC";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
 $result2=mysqli_query($connection,$read_query2);
 $s_r=1;
@@ -305,7 +305,7 @@ $s_r++;
 
 <?php
 include 'config.php';
-$read_query="SELECT * FROM post LEFT JOIN Book_info ON post.Book_id=Book_info.Book_id LEFT JOIN category ON Book_info.Category=category.Category_id
+$read_query="SELECT * FROM post LEFT JOIN book_info ON post.Book_id=book_info.Book_id LEFT JOIN category ON book_info.Category=category.Category_id
              ORDER BY post.Post_id DESC";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
 $result=mysqli_query($connection,$read_query);
 $s_r=1;

@@ -47,7 +47,7 @@ if(isset($_REQUEST['update'])) {
       
       for($i=0;$i<$cnt;$i++)
       {
-      $read_query="SELECT * FROM Book_info WHERE Book_id='$arr_id[$i]'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+      $read_query="SELECT * FROM book_info WHERE Book_id='$arr_id[$i]'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
       $result=mysqli_query($connection,$read_query);
       while($row=mysqli_fetch_row($result)) {
       if($row[12]==2) { $delivery="Free"; }

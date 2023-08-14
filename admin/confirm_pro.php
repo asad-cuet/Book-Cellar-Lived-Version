@@ -53,7 +53,7 @@ while($row=mysqli_fetch_row($result)) {
              {
                   if($i==$x) 
                   {
-                  $update_query2= "UPDATE Book_info SET Ordered = Ordered + '$arr_quant[$x]' WHERE Book_id='$arr_id[$i]'";     
+                  $update_query2= "UPDATE book_info SET Ordered = Ordered + '$arr_quant[$x]' WHERE Book_id='$arr_id[$i]'";     
                   $update2=mysqli_query($connection,$update_query2) or DIE("update failed");
 
                   }

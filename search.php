@@ -162,7 +162,7 @@ if(isset($_REQUEST['added'])) {
 $cats=array();
 $b_ids=array();
 $sr=0;
-$read_query2="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id WHERE Keyword LIKE '%{$key}%';";
+$read_query2="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id WHERE Keyword LIKE '%{$key}%';";
 $result2=mysqli_query($connection,$read_query2);
 $count=mysqli_num_rows($result2);
 if($count>0)
@@ -250,7 +250,7 @@ if($count>0)
 $a_length=count($cats);
 for($i=0;$i<$a_length;$i++)
 {
-$read_query3="SELECT * FROM Book_info LEFT JOIN category ON Book_info.Category=category.Category_id WHERE Book_info.Category='$cats[$i]'";
+$read_query3="SELECT * FROM book_info LEFT JOIN category ON book_info.Category=category.Category_id WHERE book_info.Category='$cats[$i]'";
 $result3=mysqli_query($connection,$read_query3);
 $count2=mysqli_num_rows($result3);
 if($count2>0)

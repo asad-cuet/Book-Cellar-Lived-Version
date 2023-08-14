@@ -70,7 +70,7 @@ if(isset($_REQUEST['post'])) {
   
  if(!empty($title) && !empty($cat_id) && !empty($price) && $redflag==0) {
 
-  $insert_query1="INSERT INTO Book_info (Book_picture,Book_title,Book_author,Published,Price,Discount,Delivery_charge,F_price,Category,Available,Ordered,Company_name,Rating,Keyword) VALUES ('$img_name_c','$title','$author','$publish','$price','$disc','$d_charge','$f_price','$cat_id','$avail',0,'$com_name','$rating','$keyword_f');";
+  $insert_query1="INSERT INTO book_info (Book_picture,Book_title,Book_author,Published,Price,Discount,Delivery_charge,F_price,Category,Available,Ordered,Company_name,Rating,Keyword) VALUES ('$img_name_c','$title','$author','$publish','$price','$disc','$d_charge','$f_price','$cat_id','$avail',0,'$com_name','$rating','$keyword_f');";
   $insert_query2= "UPDATE category SET No_of_book = No_of_book + 1 WHERE Category_id='$cat_id'";
   $insert1=mysqli_query($connection,$insert_query1) or die("Insert Query Failed");
   $insert2=mysqli_query($connection,$insert_query2) or die("Update Query Failed");

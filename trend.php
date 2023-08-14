@@ -154,7 +154,7 @@ while($row=mysqli_fetch_row($result)) {
 
 
 
-$read_query2="SELECT * FROM Book_info LEFT JOIN category ON category.Category_id=Book_info.Category WHERE Book_id='$book_id'";
+$read_query2="SELECT * FROM book_info LEFT JOIN category ON category.Category_id=book_info.Category WHERE Book_id='$book_id'";
 $result2=mysqli_query($connection,$read_query2);
 
 while($row=mysqli_fetch_row($result2)) {

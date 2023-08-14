@@ -20,7 +20,7 @@ $rec_book_id=htmlspecialchars($_REQUEST['book_id']);
 $rec_book_pic=htmlspecialchars($_REQUEST['book_pic']);
 $rec_cat_id=htmlspecialchars($_REQUEST['cat_id']);
 include 'config.php';
-$read_query="SELECT * FROM Book_info WHERE Book_id='$rec_book_id'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
+$read_query="SELECT * FROM book_info WHERE Book_id='$rec_book_id'";  //SELECT * FROM table_name ORDER BY column_name(s) ASC|DESC 
 $result=mysqli_query($connection,$read_query);
 while($row=mysqli_fetch_row($result)) {
 
@@ -101,7 +101,7 @@ if(isset($_REQUEST['update_'])) {
       
       if(!empty($title) && !empty($cat_id) && !empty($price) && $redflag==0) {
     
-      $update_query1="UPDATE Book_info SET Book_picture='$img_name_c',Book_title='$title',Book_author='$author',Published='$publish',Price='$price',Discount='$disc',Delivery_charge='$d_charge',F_price='$f_price',Category='$cat_id',Available='$avail',Company_name='$com_name',Rating='$rating',Keyword='$keyword' WHERE Book_id=$rec_book_id";
+      $update_query1="UPDATE book_info SET Book_picture='$img_name_c',Book_title='$title',Book_author='$author',Published='$publish',Price='$price',Discount='$disc',Delivery_charge='$d_charge',F_price='$f_price',Category='$cat_id',Available='$avail',Company_name='$com_name',Rating='$rating',Keyword='$keyword' WHERE Book_id=$rec_book_id";
      if($cat_id!=$rec_cat_id) { 
             $update_query2= "UPDATE category SET No_of_book = No_of_book - 1 WHERE Category_id='$rec_cat_id'";
             $update_query3= "UPDATE category SET No_of_book = No_of_book + 1 WHERE Category_id='$cat_id'";
